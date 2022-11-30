@@ -14,7 +14,6 @@ class authService {
       }
 
       this.usuarios.push({ username, avatar });
-      console.log(usuarios);
       return {
         message: "Tudo certo!",
         statusCode: 200,
