@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import cors from "cors";
 import express, { json } from "express";
+import handleApplicationErrors from "./middlewares/handleApplicationErrors.js";
 import authRoute from "./routes/authRoute.js";
 
 class App {
@@ -16,6 +17,7 @@ class App {
 
   configRoutes() {
     this.server.use(authRoute)
+    this.server.use(handleApplicationErrors.error)
   }
 
   configListen() {
