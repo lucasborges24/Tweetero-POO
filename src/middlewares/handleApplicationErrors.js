@@ -4,7 +4,6 @@ class HandleError {
   }
 
   error(err, req, res, next) {
-    console.log(err);
     return res.status(err.httpStatus).send(err.message);
   }
 }
