@@ -3,6 +3,7 @@ import cors from "cors";
 import express, { json } from "express";
 import handleApplicationErrors from "./middlewares/handleApplicationErrors.js";
 import authRoute from "./routes/authRoute.js";
+import tweetRoute from "./routes/tweetRoute.js";
 
 class App {
   constructor(port, server) {
@@ -17,6 +18,7 @@ class App {
 
   configRoutes() {
     this.server.use(authRoute)
+    this.server.use(tweetRoute)
     this.server.use(handleApplicationErrors.error)
   }
 
