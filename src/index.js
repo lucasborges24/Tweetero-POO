@@ -1,10 +1,12 @@
 import chalk from "chalk";
+import dotenv from "dotenv";
 import cors from "cors";
 import express, { json } from "express";
 import handleApplicationErrors from "./middlewares/handleApplicationErrors.js";
 import authRoute from "./routes/authRoute.js";
 import tweetRoute from "./routes/tweetRoute.js";
 
+dotenv.config();
 class App {
   constructor(port, server) {
     this.port = port;
@@ -17,9 +19,9 @@ class App {
   }
 
   configRoutes() {
-    this.server.use(authRoute)
-    this.server.use(tweetRoute)
-    this.server.use(handleApplicationErrors.error)
+    this.server.use(authRoute);
+    this.server.use(tweetRoute);
+    this.server.use(handleApplicationErrors.error);
   }
 
   configListen() {
@@ -33,7 +35,7 @@ class App {
   }
 }
 
-const app = new App(5000, express());
+const app = new App(process.env.PORT, express());
 
 app.configServer();
 app.configRoutes();
