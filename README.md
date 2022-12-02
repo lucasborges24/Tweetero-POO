@@ -26,7 +26,9 @@ Tweetero is an API to be consumed by a copy website of twiter, [tweetero-front](
 - [API Reference](#api-reference)
   - [Sign in ](#signin)
   - [Post a Tweet](#post-a-tweet)
-  - [Get Tweets](#get-tweets)
+  - [Get Tweets](#get-tweets)   
+    - [All Tweets](#all-tweets)
+    - [Tweets by Pagination](#tweets-by-pagination)
   - [Get Tweets By Username](#get-tweets-by-username)
 - [Author](#author)
 
